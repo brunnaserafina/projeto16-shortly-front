@@ -145,6 +145,10 @@ body {
   
 }
 
+a{
+  text-decoration: none;
+  color: #000000;
+}
 `;
 
 export default GlobalStyle;

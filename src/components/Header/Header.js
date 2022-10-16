@@ -1,24 +1,51 @@
+import { Link } from "react-router-dom";
 import shorts from "../../assets/images/shorts.svg";
 import styled from "styled-components";
 
-export default function Header() {
+export default function Header({ login, welcome }) {
   return (
     <>
-      <AcessContainer>
-        <h6>Entrar</h6>
-        <h6>Cadastre-se</h6>
-      </AcessContainer>
+      {welcome ? (
+        <div>
+          <h5>Seja bem-vindo(a), Pessoa!</h5>
+          <AcessContainer>
+            <Link to={`/welcome`}>
+              <h6>Home</h6>
+            </Link>
 
-      <LogoContainer>
-        <span>Shortly</span>
-        <img src={shorts} alt="shortly" />
-      </LogoContainer>
+            <Link to={`/`}>
+              <h6>Ranking</h6>
+            </Link>
+
+            <Link to={`/`}>
+              <h6>Sair</h6>
+            </Link>
+          </AcessContainer>
+        </div>
+      ) : (
+        <AcessContainer>
+          <Link to={`/sign-in`}>
+            <Login login={login}>Entrar</Login>
+          </Link>
+
+          <Link to={`/sign-up`}>
+            <SignUp login={login}>Cadastre-se</SignUp>
+          </Link>
+        </AcessContainer>
+      )}
+
+      <Link to={`/`}>
+        <LogoContainer>
+          <span>Shortly</span>
+          <img src={shorts} alt="shortly" />
+        </LogoContainer>
+      </Link>
     </>
   );
 }
 
 const AcessContainer = styled.div`
-  width: 85vw;
+  width: 80vw;
   display: flex;
   justify-content: flex-end;
 
@@ -27,6 +54,18 @@ const AcessContainer = styled.div`
     font-weight: 400;
     color: #9c9c9c;
   }
+`;
+
+const Login = styled.h4`
+  margin-left: 10px;
+  font-weight: 400;
+  color: ${(props) => (props.login ? "#5D9040" : "#9c9c9c")};
+`;
+
+const SignUp = styled.h4`
+  margin-left: 10px;
+  font-weight: 400;
+  color: ${(props) => (props.login ? "#9c9c9c" : "#5D9040")};
 `;
 
 const LogoContainer = styled.div`

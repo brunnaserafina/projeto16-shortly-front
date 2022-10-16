@@ -5,7 +5,7 @@ import styled from "styled-components";
 export default function PageRanking() {
   return (
     <>
-      <Header />
+      <Header login />
 
       <RankingContainer>
         <div>
@@ -20,15 +20,6 @@ export default function PageRanking() {
     </>
   );
 }
-
-const Ranking = styled.div`
-  width: 60vw;
-  height: 300px;
-  border: 1px solid rgba(120, 177, 89, 0.25);
-  border-radius: 24px 24px 0px 0px;
-  box-shadow: 0px 4px 24px rgba(120, 177, 89, 0.12);
-  margin: 30px 0px;
-`;
 
 const RankingContainer = styled.div`
   width: 100vw;
@@ -49,4 +40,13 @@ const RankingContainer = styled.div`
     font-weight: 700;
     margin-left: 8px;
   }
+`;
+
+const Ranking = styled.div`
+  width: 60vw;
+  height: 300px;
+  border: 1px solid rgba(120, 177, 89, 0.25);
+  border-radius: 24px 24px 0px 0px;
+  box-shadow: 0px 4px 24px rgba(120, 177, 89, 0.12);
+  margin: 30px 0px;
 `;

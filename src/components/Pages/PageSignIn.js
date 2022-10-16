@@ -5,7 +5,7 @@ import styled from "styled-components";
 export default function PageSignIn() {
   return (
     <>
-      <Header />
+      <Header login />
 
       <LoginContainer>
         <Input placeholder="E-mail" />
