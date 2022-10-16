@@ -1,6 +1,6 @@
 import { React } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { PageRanking, PageSignIn } from "../Pages";
+import { PageRanking, PageSignIn, PageSignUp } from "../Pages";
 import GlobalStyle from "./GlobalStyle";
 
 export default function App() {
@@ -11,6 +11,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<PageRanking />} />
           <Route path="/sign-in" element={<PageSignIn />} />
+          <Route path="/sign-up" element={<PageSignUp />} />
         </Routes>
       </BrowserRouter>
     </>
