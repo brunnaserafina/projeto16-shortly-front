@@ -34,6 +34,7 @@ const LogoContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 130px;
 
   span {
     font-size: 64px;

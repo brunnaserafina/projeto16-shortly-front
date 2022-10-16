@@ -132,6 +132,9 @@ table {
 }
 
 /*My styles*/
+* {
+  box-sizing: border-box;
+}
 
 body {
   width: 100vw;
@@ -139,6 +142,7 @@ body {
   display: flex;
   justify-content: center;
   font-family: Lexend Deca;
+  
 }
 
 `;
