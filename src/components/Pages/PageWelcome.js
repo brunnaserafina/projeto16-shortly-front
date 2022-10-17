@@ -1,6 +1,6 @@
 import Header from "../Header/Header";
 import { React, useState, useEffect } from "react";
-import { postUrl, deleteUrl, redirectLink } from "../../services/shortly";
+import { postUrl, deleteUrl } from "../../services/shortly";
 import { Input, Button } from "../../common";
 import trash from "../../assets/images/trash.svg";
 import { getMyUrls } from "../../services/shortly";
@@ -86,14 +86,12 @@ function UrlElements({ link, setRender, render }) {
         <Links>
           <div>{url} </div>
           <span onClick={() => setRender(!render)}>
-            <a href={redirect} target="_blank">
-              {shortUrl}
-            </a>
+            <a href={redirect}>{shortUrl}</a>
           </span>
           <span>Quantidade de visitantes: {visitCount}</span>
         </Links>
         <Delete onClick={deleteLink}>
-          <img src={trash} />
+          <img src={trash} alt="trash" />
         </Delete>
       </LinksContainer>
     </>

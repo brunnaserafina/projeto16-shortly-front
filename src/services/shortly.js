@@ -7,7 +7,7 @@ function createHeaders() {
 
   const config = {
     headers: {
-      Authorization: `Bearer 11a3dd13-9d15-4a80-8dac-e6882d236985`,
+      Authorization: `Bearer ${token}`,
     },
   };
 
@@ -56,18 +56,4 @@ function deleteUrl(id) {
   return promise;
 }
 
-function redirectLink(shortUrl) {
-  const promise = axios.get(
-    `https://proj16-shortly-back.herokuapp.com/urls/open/${shortUrl}`
-  );
-}
-
-export {
-  postSignUp,
-  postSignIn,
-  getRanking,
-  getMyUrls,
-  postUrl,
-  deleteUrl,
-  redirectLink,
-};
+export { postSignUp, postSignIn, getRanking, getMyUrls, postUrl, deleteUrl };

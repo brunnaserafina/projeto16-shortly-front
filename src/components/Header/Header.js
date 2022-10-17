@@ -1,16 +1,35 @@
-import { Link } from "react-router-dom";
-import { useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { userContext } from "../../contexts/userContext";
+import { getMyUrls } from "../../services/shortly";
 import shorts from "../../assets/images/shorts.svg";
 import styled from "styled-components";
 
 export default function Header({ login, welcome }) {
-  useE;
+  const { user, setUser } = useContext(userContext);
+  const token = JSON.parse(localStorage.getItem("shortly"))?.token;
+  const navigate = useNavigate();
+
+  function logout() {
+    if (window.confirm("Tem certeza que deseja sair?")) {
+      localStorage.removeItem("shortly");
+      navigate("/");
+    }
+  }
+
+  if (token) {
+    getMyUrls()
+      .catch((response) => console.log(response))
+      .then((response) => {
+        setUser(response.data.name);
+      });
+  }
 
   return (
     <>
-      {welcome ? (
+      {token ? (
         <AcessContainer>
-          <h5>Seja bem-vindo(a), Pessoa!</h5>
+          <h5>Seja bem-vindo(a), {user}!</h5>
           <div>
             <Link to={`/welcome`}>
               <h6>Home</h6>
@@ -21,7 +40,7 @@ export default function Header({ login, welcome }) {
             </Link>
 
             <Link to={`/`}>
-              <h6>Sair</h6>
+              <h6 onClick={logout}>Sair</h6>
             </Link>
           </div>
         </AcessContainer>
@@ -61,6 +80,10 @@ const AcessContainer = styled.div`
 
   div {
     display: flex;
+  }
+
+  h5 {
+    color: #5d9040;
   }
 `;
 const AcessContainerr = styled.div`

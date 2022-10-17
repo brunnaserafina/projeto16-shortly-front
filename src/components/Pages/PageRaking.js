@@ -1,5 +1,4 @@
 import { React, useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
 import { getRanking } from "../../services/shortly";
 import Header from "../Header/Header";
 import trophy from "../../assets/images/trophy.svg";
