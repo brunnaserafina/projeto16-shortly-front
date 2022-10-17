@@ -30,7 +30,7 @@ export default function PageSignIn() {
             token: response.data.token,
           })
         );
-
+        alert("Login efetuado com sucesso!");
         navigate("/welcome");
       });
   }
@@ -63,7 +63,7 @@ export default function PageSignIn() {
 }
 
 const LoginContainer = styled.form`
-  width: 100vw;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;

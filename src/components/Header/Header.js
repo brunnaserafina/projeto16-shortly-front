@@ -6,9 +6,9 @@ export default function Header({ login, welcome }) {
   return (
     <>
       {welcome ? (
-        <div>
+        <AcessContainer>
           <h5>Seja bem-vindo(a), Pessoa!</h5>
-          <AcessContainer>
+          <div>
             <Link to={`/welcome`}>
               <h6>Home</h6>
             </Link>
@@ -20,10 +20,10 @@ export default function Header({ login, welcome }) {
             <Link to={`/`}>
               <h6>Sair</h6>
             </Link>
-          </AcessContainer>
-        </div>
+          </div>
+        </AcessContainer>
       ) : (
-        <AcessContainer>
+        <AcessContainerr>
           <Link to={`/sign-in`}>
             <Login login={login}>Entrar</Login>
           </Link>
@@ -31,7 +31,7 @@ export default function Header({ login, welcome }) {
           <Link to={`/sign-up`}>
             <SignUp login={login}>Cadastre-se</SignUp>
           </Link>
-        </AcessContainer>
+        </AcessContainerr>
       )}
 
       <Link to={`/`}>
@@ -45,14 +45,35 @@ export default function Header({ login, welcome }) {
 }
 
 const AcessContainer = styled.div`
-  width: 80vw;
+  width: 100%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: center;
 
   h6 {
-    margin-left: 10px;
+    margin-left: 30px;
     font-weight: 400;
     color: #9c9c9c;
+  }
+
+  div {
+    display: flex;
+  }
+`;
+const AcessContainerr = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  h6 {
+    margin-left: 30px;
+    font-weight: 400;
+    color: #9c9c9c;
+  }
+
+  div {
+    display: flex;
   }
 `;
 
@@ -73,7 +94,7 @@ const LogoContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 130px;
+  margin-bottom: 110px;
 
   span {
     font-size: 64px;

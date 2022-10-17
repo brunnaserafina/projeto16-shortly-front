@@ -136,19 +136,26 @@ table {
   box-sizing: border-box;
 }
 
+.root{
+  width: 60vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 body {
-  width: 100vw;
-  margin: 90px 0;
+  margin: 90px auto;
   display: flex;
   justify-content: center;
   font-family: Lexend Deca;
-  
 }
 
-a{
+a {
   text-decoration: none;
   color: #000000;
 }
+
 `;
 
 export default GlobalStyle;

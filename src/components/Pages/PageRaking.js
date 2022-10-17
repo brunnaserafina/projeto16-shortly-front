@@ -21,10 +21,10 @@ export default function PageRanking() {
       <Header login />
 
       <RankingContainer>
-        <div>
+        <span>
           <img src={trophy} alt="trophy" />
           <span>Ranking</span>
-        </div>
+        </span>
 
         <Ranking>
           {ranking.map((users) => (
@@ -39,11 +39,11 @@ export default function PageRanking() {
 }
 
 function RankingElements({ users }) {
-  const { name, linksCount, visitsCount } = users;
+  const { name, linksCount, visitCount } = users;
 
   return (
     <li>
-      {name} - {linksCount} links - {visitsCount} visualizações
+      {name} - {linksCount} links - {visitCount} visualizações
     </li>
   );
 }
@@ -54,7 +54,6 @@ const RankingContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 80px;
 
   div {
     display: flex;
@@ -65,21 +64,25 @@ const RankingContainer = styled.div`
     font-size: 36px;
     font-weight: 700;
     margin-left: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 `;
 
 const Ranking = styled.div`
   width: 60vw;
   height: auto;
-  margin: 30px 0px;
+  margin: 55px 0px;
   padding: 20px 35px;
   display: flex;
   flex-direction: column;
   font-size: 22px;
-  line-height: 27.5px;
+  line-height: 33px;
   border: 1px solid rgba(120, 177, 89, 0.25);
   border-radius: 24px 24px 0px 0px;
   box-shadow: 0px 4px 24px rgba(120, 177, 89, 0.12);
+  font-weight: 400;
 
   li {
     list-style-type: decimal;
