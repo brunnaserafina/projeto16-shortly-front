@@ -56,4 +56,18 @@ function deleteUrl(id) {
   return promise;
 }
 
-export { postSignUp, postSignIn, getRanking, getMyUrls, postUrl, deleteUrl };
+function redirectLink(shortUrl) {
+  const promise = axios.get(
+    `https://proj16-shortly-back.herokuapp.com/urls/open/${shortUrl}`
+  );
+}
+
+export {
+  postSignUp,
+  postSignIn,
+  getRanking,
+  getMyUrls,
+  postUrl,
+  deleteUrl,
+  redirectLink,
+};

@@ -1,6 +1,6 @@
 import Header from "../Header/Header";
 import { React, useState, useEffect } from "react";
-import { postUrl, deleteUrl } from "../../services/shortly";
+import { postUrl, deleteUrl, redirectLink } from "../../services/shortly";
 import { Input, Button } from "../../common";
 import trash from "../../assets/images/trash.svg";
 import { getMyUrls } from "../../services/shortly";
@@ -65,6 +65,8 @@ export default function PageWelcome() {
 function UrlElements({ link, setRender, render }) {
   const { id, shortUrl, url, visitCount } = link;
 
+  const redirect = `https://proj16-shortly-back.herokuapp.com/urls/open/${shortUrl}`;
+
   function deleteLink() {
     if (window.confirm("Tem certeza que deseja deletar o link?")) {
       deleteUrl(id)
@@ -83,7 +85,11 @@ function UrlElements({ link, setRender, render }) {
       <LinksContainer>
         <Links>
           <div>{url} </div>
-          <span>{shortUrl}</span>
+          <span onClick={() => setRender(!render)}>
+            <a href={redirect} target="_blank">
+              {shortUrl}
+            </a>
+          </span>
           <span>Quantidade de visitantes: {visitCount}</span>
         </Links>
         <Delete onClick={deleteLink}>
@@ -126,6 +132,10 @@ const Links = styled.div`
 
   div {
     width: 40%;
+  }
+
+  a {
+    color: #ffffff;
   }
 `;
 

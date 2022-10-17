@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 import shorts from "../../assets/images/shorts.svg";
 import styled from "styled-components";
 
 export default function Header({ login, welcome }) {
+  useE;
+
   return (
     <>
       {welcome ? (
