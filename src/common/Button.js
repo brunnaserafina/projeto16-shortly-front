@@ -10,6 +10,7 @@ const Button = styled.button`
   font-weight: 700;
   font-size: 14px;
   margin-top: 70px;
+  cursor: pointer;
 `;
 
 export default Button;
