@@ -54,24 +54,25 @@
 ### ▶️ Rodando a aplicação
 
 1. Crie ou selecione uma pasta com o nome de sua preferência
-2. Clone este repositório na pasta criada/selecionada:
+2. Clone na pasta criada/selecionada o repositório back-end https://github.com/brunnaserafina/shortly-api
+3. Clone também este repositório:
 
 ```bash
  $ git clone https://github.com/brunnaserafina/shortly.git
 ```
-3. Instale as dependências:
+4. Instale as dependências:
 ```bash
  $ npm i
 ```
-4. Você pode, opcionalmente, rodar o build 
+5. Você pode, opcionalmente, rodar o build 
 ```bash
  $ npm run build
 ```
-5. Rode a aplicação:
+6. Rode a aplicação:
 ```bash
  $ npm start
 ```
-6. Por fim, acesse http://localhost:3000 no seu browser 
+7. Por fim, acesse http://localhost:3000 no seu browser 
 ###
 <br />
 
