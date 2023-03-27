@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "https://shortly-api-qo6y.onrender.com";
+const BASE_URL = "https://shortly-db-7snf.onrender.com";
 
 function createHeaders() {
   const token = JSON.parse(localStorage.getItem("shortly")).token;
