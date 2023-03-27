@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "https://proj16-shortly-back.herokuapp.com";
+const BASE_URL = "https://shortly-api-qo6y.onrender.com";
 
 function createHeaders() {
   const token = JSON.parse(localStorage.getItem("shortly")).token;
